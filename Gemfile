@@ -11,7 +11,7 @@ gem "decidim", DECIDIM_VERSION
 gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome"
 gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "main"
 
-gem "decidim-action_delegator", github: "coopdevs/decidim-module-action_delegator", branch: "main"
+# gem "decidim-action_delegator", github: "coopdevs/decidim-module-action_delegator"
 # gem "decidim-odoo", "~> 0.2.2"
 
 gem "bootsnap", "~> 1.7"
