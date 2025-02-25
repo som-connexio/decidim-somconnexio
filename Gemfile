@@ -4,25 +4,25 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.27.4"
+DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.28-stable" }.freeze
 
 gem "decidim", DECIDIM_VERSION
-gem "decidim-consultations", DECIDIM_VERSION
+
+gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome"
+gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "main"
 
 gem "decidim-action_delegator", github: "coopdevs/decidim-module-action_delegator", branch: "main"
-gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
-gem "decidim-odoo", "~> 0.2.2"
-gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "master"
+# gem "decidim-odoo", "~> 0.2.2"
 
-gem "bootsnap", "~> 1.3"
+gem "bootsnap", "~> 1.7"
 
-gem "puma", ">= 5.0.0"
+gem "puma"
 
-gem "faker", "~> 2.14"
+gem "faker", "~> 3.2"
 
-gem "wicked_pdf", "~> 2.1"
+gem "wicked_pdf"
 
-gem "deface"
+gem "deface", "~> 1.9"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
