@@ -11,8 +11,8 @@ module Decidim
             def new
               @authorization.destroy! if authorization&.persisted? && !authorization&.granted?
 
-              enforce_permission_to :create, :authorization, authorization: authorization
-              @form = form(verifier_form).instance(setting: setting)
+              enforce_permission_to(:create, :authorization, authorization:)
+              @form = form(verifier_form).instance(setting:)
               participant = @form&.participant
 
               return unless ActionDelegator.authorize_on_login && setting&.verify_with_email?
@@ -28,9 +28,9 @@ module Decidim
             end
 
             def create
-              enforce_permission_to :create, :authorization, authorization: authorization
+              enforce_permission_to(:create, :authorization, authorization:)
 
-              @form = form(verifier_form).from_params(form_params, setting: setting)
+              @form = form(verifier_form).from_params(form_params, setting:)
               participant = @form&.participant
 
               Decidim::Verifications::PerformAuthorizationStep.call(authorization, @form) do
@@ -38,7 +38,7 @@ module Decidim
                   if setting.phone_required?
                     flash[:notice] = t("authorizations.create.success", scope: "decidim.verifications.sms")
                     authorization_method = Decidim::Verifications::Adapter.from_element(authorization.name)
-                    redirect_to authorization_method.resume_authorization_path(redirect_url: redirect_url)
+                    redirect_to authorization_method.resume_authorization_path(redirect_url:)
                   else
                     grant_and_redirect(participant)
                   end
