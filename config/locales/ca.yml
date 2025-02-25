@@ -44,3 +44,6 @@ ca:
             success: La sincronització ha començat. Pot trigar uns quants minuts
       errors:
         not_found: L'usuari d'Odoo no s'ha trobat
+  locale:
+    name: Català
+    name_with_error: Català (¡error!)
