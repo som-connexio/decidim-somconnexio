@@ -51,3 +51,4 @@ Capfile
 
 public/sw.js
 public/sw.js.map
+tailwind.config.js
