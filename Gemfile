@@ -18,14 +18,13 @@ gem "bootsnap", "~> 1.7"
 
 gem "puma"
 
-gem "faker", "~> 3.2"
-
-gem "wicked_pdf"
+gem "health_check"
 
 gem "deface", "~> 1.9"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
+  gem "faker", "~> 3.2"
 
   gem "brakeman"
   gem "decidim-dev", DECIDIM_VERSION
