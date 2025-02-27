@@ -6,6 +6,3 @@ en:
         settings:
           authorization_method:
             odoo: Only Odoo members
-  locale:
-    name: English
-    name_with_error: English (error!)
