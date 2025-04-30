@@ -12,14 +12,12 @@ Decidim.configure do |config|
   # When an organization is created through the System area, system admins will
   # be able to choose the available languages for that organization. That list
   # of languages will be equal or a subset of the list in this file.
-  config.available_locales = Rails.application.secrets.decidim[:available_locales].presence || [:en]
-  # Or block set it up manually and prevent ENV manipulation:
-  # config.available_locales = %w(en ca es)
+  config.available_locales = Rails.application.secrets.decidim[:available_locales].presence || [:eu, :es]
 
   # Sets the default locale for new organizations. When creating a new
   # organization from the System area, system admins will be able to overwrite
   # this value for that specific organization.
-  config.default_locale = Rails.application.secrets.decidim[:default_locale].presence || :en
+  config.default_locale = Rails.application.secrets.decidim[:default_locale].presence || :ca
 
   # Restrict access to the system part with an authorized ip list.
   # You can use a single ip like ("1.2.3.4"), or an ip subnet like ("1.2.3.4/24")
@@ -37,8 +35,13 @@ Decidim.configure do |config|
   # or set it up manually and prevent any ENV manipulation:
   # config.force_ssl = true
 
-  # Enable the service worker. By default is disabled in development and enabled in the rest of environments
+  # Enable the service worker. By default, is disabled in development and enabled in the rest of environments
   config.service_worker_enabled = Rails.application.secrets.decidim[:service_worker_enabled].present?
+
+  # Sets the list of static pages' slugs that can include content blocks.
+  # By default, is only enabled in the terms-of-service static page to allow a summary to be added and include
+  # sections with a two-pane view
+  config.page_blocks = Rails.application.secrets.decidim[:page_blocks].presence || %w(terms-of-service)
 
   # Map and Geocoder configuration
   #
@@ -46,7 +49,8 @@ Decidim.configure do |config|
   # config.maps = {
   #   provider: :here,
   #   api_key: Rails.application.secrets.maps[:api_key],
-  #   static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" }
+  #   static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" },
+  #   geocoding: { host: "nominatim.openstreetmap.org", use_https: true }
   # }
   #
   # == OpenStreetMap (OSM) services ==
@@ -111,7 +115,7 @@ Decidim.configure do |config|
     dynamic_provider = Rails.application.secrets.maps[:dynamic_provider]
     dynamic_url = Rails.application.secrets.maps[:dynamic_url]
     static_url = Rails.application.secrets.maps[:static_url]
-    static_url = "https://image.maps.ls.hereapi.com/mia/1.6/mapview" if static_provider == "here" && static_url.blank?
+    static_url = "https://image.maps.hereapi.com/mia/v3/base/mc/overlay" if static_provider == "here" && static_url.blank?
     config.maps = {
       provider: static_provider,
       api_key: Rails.application.secrets.maps[:static_api_key],
@@ -181,7 +185,7 @@ Decidim.configure do |config|
   # Allow organizations admins to track newsletter links.
   config.track_newsletter_links = Rails.application.secrets.decidim[:track_newsletter_links].present? unless Rails.application.secrets.decidim[:track_newsletter_links] == "auto"
 
-  # Amount of time that the download your data files will be available in the server.
+  # Amount of time that the data portability files will be available in the server.
   config.download_your_data_expiry_time = Rails.application.secrets.decidim[:download_your_data_expiry_time].to_i.days
 
   # Max requests in a time period to prevent DoS attacks. Only applied on production.
@@ -222,7 +226,7 @@ Decidim.configure do |config|
   #   end
   # end
   #
-  config.sms_gateway_service = "Decidim::ActionDelegator::SmsGateway"
+  # config.sms_gateway_service = "Decidim::ActionDelegator::SmsGateway"
 
   # Timestamp service configuration
   #
@@ -245,7 +249,6 @@ Decidim.configure do |config|
   #     "My timestamp"
   #   end
   # end
-  #
   #
   # config.timestamp_service = "MyTimestampService"
 
@@ -275,7 +278,7 @@ Decidim.configure do |config|
   # Etherpad configuration
   #
   # Only needed if you want to have Etherpad integration with Decidim. See
-  # Decidim docs at https://docs.decidim.org/en/services/etherpad/ in order to set it up.
+  # Decidim docs at docs/services/etherpad.md in order to set it up.
   #
   if Rails.application.secrets.etherpad.present? && Rails.application.secrets.etherpad[:server].present?
     config.etherpad = {
@@ -302,18 +305,11 @@ Decidim.configure do |config|
 
   # Machine Translation Configuration
   #
-  # See Decidim docs at https://docs.decidim.org/en/develop/machine_translations/
-  # for more information about how it works and how to set it up.
-  #
   # Enable machine translations
   config.enable_machine_translations = false
   #
   # If you want to enable machine translation you can create your own service
   # to interact with third party service to translate the user content.
-  #
-  # If you still want to use "Decidim::Dev::DummyTranslator" as translator placeholder,
-  # add the follwing line at the beginning of this file:
-  # require "decidim/dev/dummy_translator"
   #
   # An example class would be something like:
   #
@@ -378,6 +374,8 @@ Decidim.configure do |config|
 
   # Additional optional configurations (see decidim-core/lib/decidim/core.rb)
   config.cache_key_separator = Rails.application.secrets.decidim[:cache_key_separator] if Rails.application.secrets.decidim[:cache_key_separator].present?
+  config.cache_expiry_time = Rails.application.secrets.decidim[:cache_expiry_time].to_i.minutes if Rails.application.secrets.decidim[:cache_expiry_time].present?
+  config.stats_cache_expiry_time = Rails.application.secrets.decidim[:stats_cache_expiry_time].to_i.minutes if Rails.application.secrets.decidim[:stats_cache_expiry_time].present?
   config.expire_session_after = Rails.application.secrets.decidim[:expire_session_after].to_i.minutes if Rails.application.secrets.decidim[:expire_session_after].present?
   config.enable_remember_me = Rails.application.secrets.decidim[:enable_remember_me].present? unless Rails.application.secrets.decidim[:enable_remember_me] == "auto"
   if Rails.application.secrets.decidim[:session_timeout_interval].present?
@@ -385,7 +383,8 @@ Decidim.configure do |config|
   end
   config.follow_http_x_forwarded_host = Rails.application.secrets.decidim[:follow_http_x_forwarded_host].present?
   config.maximum_conversation_message_length = Rails.application.secrets.decidim[:maximum_conversation_message_length].to_i
-  config.password_blacklist = Rails.application.secrets.decidim[:password_blacklist] if Rails.application.secrets.decidim[:password_blacklist].present?
+  config.password_similarity_length = Rails.application.secrets.decidim[:password_similarity_length] if Rails.application.secrets.decidim[:password_similarity_length].present?
+  config.denied_passwords = Rails.application.secrets.decidim[:denied_passwords] if Rails.application.secrets.decidim[:denied_passwords].present?
   config.allow_open_redirects = Rails.application.secrets.decidim[:allow_open_redirects] if Rails.application.secrets.decidim[:allow_open_redirects].present?
 end
 
@@ -434,12 +433,6 @@ if Decidim.module_installed? :accountability
   end
 end
 
-if Decidim.module_installed? :consultations
-  Decidim::Consultations.configure do |config|
-    config.stats_cache_expiration_time = Rails.application.secrets.dig(:decidim, :consultations, :stats_cache_expiration_time).to_i.minutes
-  end
-end
-
 if Decidim.module_installed? :initiatives
   Decidim::Initiatives.configure do |config|
     unless Rails.application.secrets.dig(:decidim, :initiatives, :creation_enabled) == "auto"
@@ -461,20 +454,9 @@ if Decidim.module_installed? :initiatives
   end
 end
 
-if Decidim.module_installed? :elections
-  Decidim::Elections.configure do |config|
-    config.setup_minimum_hours_before_start = Rails.application.secrets.dig(:elections, :setup_minimum_hours_before_start).presence || 3
-    config.start_vote_maximum_hours_before_start = Rails.application.secrets.dig(:elections, :start_vote_maximum_hours_before_start).presence || 6
-    config.voter_token_expiration_minutes = Rails.application.secrets.dig(:elections, :voter_token_expiration_minutes).presence || 120
-  end
-
-  Decidim::Votings.configure do |config|
-    config.check_census_max_requests = Rails.application.secrets.dig(:elections, :votings, :check_census_max_requests).presence || 5
-    config.throttling_period = Rails.application.secrets.dig(:elections, :votings, :throttling_period).to_i.minutes
-  end
-
-  Decidim::Votings::Census.configure do |config|
-    config.census_access_codes_export_expiry_time = Rails.application.secrets.dig(:elections, :votings, :census, :access_codes_export_expiry_time).to_i.days
+if Decidim.module_installed? :verifications
+  Decidim::Verifications.configure do |config|
+    config.document_types = Rails.application.secrets.dig(:verifications, :document_types).presence || %w(identification_number passport)
   end
 end
 

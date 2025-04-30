@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "active_support/core_ext/integer/time"
-
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -100,11 +98,16 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger = ActiveSupport::Logger.new($stdout)
-    logger.formatter = config.log_formatter
-    config.logger = ActiveSupport::TaggedLogging.new(logger)
+    if ENV["DISABLE_SEMANTIC_LOGGER"].present? || !defined?(SemanticLogger)
+      logger = ActiveSupport::Logger.new($stdout)
+      logger.formatter = config.log_formatter
+      config.logger = ActiveSupport::TaggedLogging.new(logger)
+    else
+      $stdout.sync = true
+      config.rails_semantic_logger.add_file_appender = false
+      config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format)
+    end
   end
-
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
@@ -128,4 +131,6 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  config.deface.enabled = ENV["DB_ADAPTER"].blank? || ENV.fetch("DB_ADAPTER", nil) == "postgresql" if config.respond_to?(:deface)
 end
