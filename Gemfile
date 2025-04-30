@@ -35,5 +35,6 @@ group :development do
 end
 
 group :production do
-  gem "sidekiq", "< 7"
+  gem "sidekiq"
+  gem "sidekiq-cron"
 end

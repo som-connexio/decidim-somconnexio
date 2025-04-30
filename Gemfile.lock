@@ -323,6 +323,9 @@ GEM
       bigdecimal
       rexml
     crass (1.0.6)
+    cronex (0.15.0)
+      tzinfo
+      unicode (>= 0.4.4.5)
     css_parser (1.21.1)
       addressable
     csv (3.3.4)
@@ -371,6 +374,8 @@ GEM
       temple
     erubi (1.13.1)
     escape_utils (1.3.0)
+    et-orbi (1.2.11)
+      tzinfo
     excon (1.2.5)
       logger
     extended-markdown-filter (0.7.0)
@@ -412,6 +417,9 @@ GEM
       activemodel (>= 4.1, < 7.1)
       activesupport (>= 4.1, < 7.1)
       railties (>= 4.1, < 7.1)
+    fugit (1.11.1)
+      et-orbi (~> 1, >= 1.2.11)
+      raabro (~> 1.4)
     gemoji (3.0.1)
     geocoder (1.8.5)
       base64 (>= 0.1.0)
@@ -611,6 +619,7 @@ GEM
     public_suffix (6.0.2)
     puma (6.6.0)
       nio4r (~> 2.0)
+    raabro (1.4.0)
     racc (1.8.1)
     rack (2.2.13)
     rack-attack (6.7.0)
@@ -784,6 +793,11 @@ GEM
       connection_pool (>= 2.2.5, < 3)
       rack (~> 2.0)
       redis (>= 4.5.0, < 5)
+    sidekiq-cron (2.2.0)
+      cronex (>= 0.13.0)
+      fugit (~> 1.8, >= 1.11.1)
+      globalid (>= 1.0.1)
+      sidekiq (>= 6.5.0)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -812,6 +826,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
+    unicode (0.4.4.5)
     unicode-display_width (2.6.0)
     uniform_notifier (1.16.0)
     uri (1.0.3)
@@ -881,7 +896,8 @@ DEPENDENCIES
   rails_semantic_logger
   sentry-rails
   sentry-ruby
-  sidekiq (< 7)
+  sidekiq
+  sidekiq-cron
   web-console (~> 4.2)
 
 RUBY VERSION
