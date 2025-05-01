@@ -1,5 +1,9 @@
 ---
 es:
+  devise:
+    login:
+      sign_in_keycloak: Accede a la plataforma de participación
+      admin_login: Accede como administrador
   decidim:
     action_delegator:
       admin:

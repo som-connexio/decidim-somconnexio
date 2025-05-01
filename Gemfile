@@ -16,6 +16,7 @@ gem "decidim-term_customizer", github: "CodiTramuntana/decidim-module-term_custo
 gem "bootsnap", "~> 1.7"
 gem "deface", ">= 1.9"
 gem "health_check"
+gem "omniauth-keycloak"
 gem "puma", ">= 6.3.1"
 gem "rails_semantic_logger"
 gem "sentry-rails"
