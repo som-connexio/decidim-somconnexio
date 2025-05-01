@@ -2,11 +2,5 @@
 en:
   devise:
     login:
-      sign_in_keycloak: Access to the participatory platform
       admin_login: Acess as an administrator
-  decidim:
-    action_delegator:
-      admin:
-        settings:
-          authorization_method:
-            odoo: Only Odoo members
+      sign_in_keycloak: Access to the participatory platform

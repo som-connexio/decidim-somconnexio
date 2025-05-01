@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "Termcustomizer" do
+describe "TermCustomizer" do
   let(:organization) { create(:organization) }
   let!(:user) do
     create(:user, :admin, :confirmed,
