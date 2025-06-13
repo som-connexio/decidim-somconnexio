@@ -4,15 +4,15 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.27.4"
+DECIDIM_VERSION = "0.27.10"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 
 gem "decidim-action_delegator", github: "coopdevs/decidim-module-action_delegator", branch: "main"
-gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
-gem "decidim-odoo", "~> 0.2.2"
-gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "master"
+gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "release/0.27-stable"
+gem "decidim-odoo", github: "openpoke/decidim-module-odoo", branch: "add-omniauth-login-event"
+gem "decidim-term_customizer", github: "mainio/decidim-module-term_customizer", branch: "release/0.27-stable"
 
 gem "bootsnap", "~> 1.3"
 
