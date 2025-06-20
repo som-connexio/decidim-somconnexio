@@ -30,9 +30,8 @@ group :development, :test do
 end
 
 group :development do
-  gem "letter_opener_web", "~> 2.0"
-  gem "listen", "~> 3.1"
-  gem "web-console", "~> 4.2"
+  gem "letter_opener_web"
+  gem "web-console"
 end
 
 group :production do
