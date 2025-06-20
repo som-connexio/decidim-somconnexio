@@ -1,4 +1,4 @@
-FROM ruby:3.2.6 AS builder
+FROM ruby:3.2.8 AS builder
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y ca-certificates curl gnupg && \
     mkdir -p /etc/apt/keyrings && \
@@ -12,15 +12,12 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y ca-certificates c
     libpq-dev && \
     apt-get clean
 
-
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
 WORKDIR /app
 
 # Copy package dependencies files only to ensure maximum cache hit
-COPY ./package-lock.json /app/package-lock.json
-COPY ./package.json /app/package.json
 COPY ./Gemfile /app/Gemfile
 COPY ./Gemfile.lock /app/Gemfile.lock
 
@@ -39,6 +36,10 @@ RUN gem install bundler:$(grep -A 1 'BUNDLED WITH' Gemfile.lock | tail -n 1 | xa
     find /usr/local/bundle/ -name "spec" -exec rm -rf {} + && \
     find /usr/local/bundle/ -wholename "*/decidim-dev/lib/decidim/dev/assets/*" -exec rm -rf {} +
 
+COPY ./package-lock.json /app/package-lock.json
+COPY ./package.json /app/package.json
+COPY ./packages /app/packages
+
 RUN npm ci
 
 # copy the rest of files
@@ -47,10 +48,10 @@ COPY ./bin /app/bin
 COPY ./config /app/config
 COPY ./db /app/db
 COPY ./lib /app/lib
-COPY ./packages /app/packages
 COPY ./public/*.* /app/public/
 COPY ./config.ru /app/config.ru
 COPY ./Rakefile /app/Rakefile
+COPY ./tsconfig.json /app/tsconfig.json
 COPY ./postcss.config.js /app/postcss.config.js
 
 # Compile assets with Shakapacker
@@ -76,7 +77,7 @@ RUN mv config/credentials.bak config/credentials 2>/dev/null || true
 RUN rm -rf node_modules tmp/cache vendor/bundle test spec app/packs .git
 
 # This image is for production env only
-FROM ruby:3.2.6-slim AS final
+FROM ruby:3.2.8-slim AS final
 
 RUN apt-get update && \
     apt-get install -y postgresql-client \
