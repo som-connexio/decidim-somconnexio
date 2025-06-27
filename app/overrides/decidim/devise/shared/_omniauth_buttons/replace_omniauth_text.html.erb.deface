@@ -1,6 +1,6 @@
 <!-- replace "span>erb[loud]:contains('normalize_provider_name(provider).titleize')" -->
 
-<% if provider == :keycloakopenid %>
+<% if provider == :odoo_keycloak %>
   <%= t("devise.login.sign_in_keycloak") %>
 <% else %>
   <%= normalize_provider_name(provider).titleize %>
