@@ -1,8 +1,6 @@
 ---
 en:
-  decidim:
-    action_delegator:
-      admin:
-        settings:
-          authorization_method:
-            odoo: Only Odoo members
+  devise:
+    login:
+      admin_login: Acess as an administrator
+      sign_in_keycloak: Access to the participatory platform

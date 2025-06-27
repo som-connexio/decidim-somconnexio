@@ -2,11 +2,11 @@
 
 require "rails_helper"
 
-describe "Term customizer", type: :system do
+describe "TermCustomizer" do
   let(:organization) { create(:organization) }
   let!(:user) do
     create(:user, :admin, :confirmed,
-           organization: organization,
+           organization:,
            nickname: "admin") # Else it gives "Nickname is too long" error
   end
 

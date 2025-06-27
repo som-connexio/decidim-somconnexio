@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "Visit the home page", type: :system, perform_enqueued: true do
+describe "Homepage", perform_enqueued: true do
   let(:organization) { create :organization }
 
   before do
@@ -12,5 +12,10 @@ describe "Visit the home page", type: :system, perform_enqueued: true do
   it "renders the home page" do
     visit decidim.root_path
     expect(page).to have_content("Home")
+  end
+
+  it "renders the language chooser on header" do
+    visit decidim.root_path
+    expect(page).to have_css(".main-header__language-container")
   end
 end
