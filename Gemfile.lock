@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim-ice/decidim-module-decidim_awesome.git
-  revision: b4399e76f44f3d63289b1eab5cc10cfe74c27a90
+  revision: b4c50032542f7295163645b04f494fd00f8c87bb
   branch: main
   specs:
     decidim-decidim_awesome (0.12.3)
@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim/decidim.git
-  revision: de1ce979a72a64091e2fdb25f55e50c70cb5ca04
+  revision: 87b55f3de27c8781c7887a47ae15d276c664868f
   branch: release/0.29-stable
   specs:
     decidim (0.29.4)
@@ -194,6 +194,15 @@ GIT
       devise_invitable (~> 2.0, >= 2.0.9)
     decidim-verifications (0.29.4)
       decidim-core (= 0.29.4)
+
+GIT
+  remote: https://github.com/openpoke/decidim-module-odoo.git
+  revision: 1b8f6a006d71883dda54f87d7b0bba2b0f02b807
+  branch: main
+  specs:
+    decidim-odoo (0.4.0)
+      decidim-core (>= 0.29.0, < 0.30)
+      omniauth-keycloak (~> 1.5)
 
 GEM
   remote: https://rubygems.org/
@@ -466,7 +475,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.8, >= 1.8.1)
       terminal-table (>= 1.5.1)
-    icalendar (2.11.1)
+    icalendar (2.11.2)
       base64
       ice_cube (~> 0.16)
       logger
@@ -530,7 +539,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2025.0617)
+    mime-types-data (3.2025.0624)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.5)
@@ -721,7 +730,7 @@ GEM
     rspec-cells (0.3.10)
       cells (>= 4.0.0, < 6.0.0)
       rspec-rails (>= 3.0.0)
-    rspec-core (3.13.4)
+    rspec-core (3.13.5)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.5)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -911,11 +920,12 @@ DEPENDENCIES
   decidim!
   decidim-decidim_awesome!
   decidim-dev!
+  decidim-odoo!
   decidim-term_customizer!
   deface (>= 1.9)
+  faker
   health_check
   letter_opener_web
-  omniauth-keycloak
   puma (>= 6.3.1)
   rails_semantic_logger
   sentry-rails

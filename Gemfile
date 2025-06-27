@@ -10,13 +10,12 @@ DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.29-stable" }.f
 gem "decidim", DECIDIM_VERSION
 
 gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
-# gem "decidim-odoo", "~> 0.2.2"
+gem "decidim-odoo", github: "openpoke/decidim-module-odoo", branch: "main"
 gem "decidim-term_customizer", github: "CodiTramuntana/decidim-module-term_customizer", branch: "upgrade/decidim_0.29"
 
 gem "bootsnap", "~> 1.7"
 gem "deface", ">= 1.9"
 gem "health_check"
-gem "omniauth-keycloak"
 gem "puma", ">= 6.3.1"
 gem "rails_semantic_logger"
 gem "sentry-rails"
@@ -27,6 +26,7 @@ group :development, :test do
 
   gem "brakeman"
   gem "decidim-dev", DECIDIM_VERSION
+  gem "faker"
 end
 
 group :development do
