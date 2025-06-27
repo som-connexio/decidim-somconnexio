@@ -74,7 +74,7 @@ RUN RAILS_ENV=production \
 RUN mv config/credentials.yml.enc.bak config/credentials.yml.enc 2>/dev/null || true
 RUN mv config/credentials.bak config/credentials 2>/dev/null || true
 
-RUN rm -rf node_modules tmp/cache vendor/bundle test spec app/packs .git
+RUN rm -rf node_modules packages/*/node_modules tmp/cache vendor/bundle test spec app/packs .git
 
 # This image is for production env only
 FROM ruby:3.2.8-slim AS final
@@ -93,9 +93,9 @@ EXPOSE 3000
 ARG CAPROVER_GIT_COMMIT_SHA=${CAPROVER_GIT_COMMIT_SHA}
 ENV APP_REVISION=${CAPROVER_GIT_COMMIT_SHA}
 
-ENV RAILS_LOG_TO_STDOUT true
-ENV RAILS_SERVE_STATIC_FILES true
-ENV RAILS_ENV production
+ENV RAILS_LOG_TO_STDOUT=true
+ENV RAILS_SERVE_STATIC_FILES=true
+ENV RAILS_ENV=production
 
 ARG RUN_RAILS
 ARG RUN_SIDEKIQ
