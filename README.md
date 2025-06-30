@@ -1,21 +1,19 @@
 # decidim_somconnexio
 
-[![[CI] Lint](https://github.com/Platoniq/decidim-module-odoo/actions/workflows/lint.yml/badge.svg)](https://github.com/Platoniq/decidim-somconnexio/actions/workflows/lint.yml)
-[![[CI] Test](https://github.com/Platoniq/decidim-module-odoo/actions/workflows/test.yml/badge.svg)](https://github.com/Platoniq/decidim-somconnexio/actions/workflows/test.yml)
-[![Maintainability](https://codeclimate.com/github/Platoniq/decidim-somconnexio/badges/gpa.svg)](https://codeclimate.com/github/Platoniq/decidim-somconnexio/maintainability)
+[![Test](https://github.com/som-connexio/decidim-somconnexio/actions/workflows/test.yml/badge.svg)](https://github.com/som-connexio/decidim-somconnexio/actions/workflows/test.yml)
 
 Free Open-Source participatory democracy, citizen participation and open government for cities and organizations
 
 This is the open-source repository for decidim-app, based on [Decidim](https://github.com/decidim/decidim).
 
-This is the instance for Erabaki Galdakao https://erabaki.galdakao.eus
+This is the instance for Participa Somconnexio https://participa.somconnexio.coop
 
 ## Server configuration
 
 Docker & Docker Compose is needed, then clone this repository:
 
 ```
-git clone https://github.com/Galdakaoko-Udala/erabaki-galdakao decidim_production
+git clone https://github.com/som-connexio/decidim-somconnexioo decidim_production
 ```
 
 or update:

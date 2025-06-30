@@ -45,7 +45,7 @@ services:
     restart: ${RESTART_POLICY:-always}
     labels:
       - "traefik.enable=true"
-      #- "traefik.http.routers.app.rule=host(`preerabaki.galdakao.eus`)"
+      #- "traefik.http.routers.app.rule=host(`participa.somconnexio.coop`)"
       - "traefik.http.routers.app.rule=PathPrefix(`/`)"
       - "traefik.http.routers.app.entrypoints=web,websecure"
       - "traefik.http.routers.app.tls=true"
