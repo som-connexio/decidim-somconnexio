@@ -9,7 +9,7 @@ DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.29-stable" }.f
 
 gem "decidim", DECIDIM_VERSION
 
-gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
+gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "release/0.29-stable"
 gem "decidim-odoo", github: "openpoke/decidim-module-odoo", branch: "main"
 gem "decidim-term_customizer", github: "CodiTramuntana/decidim-module-term_customizer", branch: "upgrade/decidim_0.29"
 
