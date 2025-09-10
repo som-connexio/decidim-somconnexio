@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim-ice/decidim-module-decidim_awesome.git
-  revision: afd2111fec6db1039a5145eaeef270c6686b6d14
+  revision: f1eb032d3dbe4d2684a1b39b2b01fde1b10eb6bf
   branch: release/0.29-stable
   specs:
     decidim-decidim_awesome (0.12.4)
@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim/decidim.git
-  revision: d46c9fc5970fa41189c6e32fb4c97c82da00956d
+  revision: f09912abf8dc2ce0ca465acff26f8e35f5e83235
   branch: release/0.29-stable
   specs:
     decidim (0.29.4)
@@ -197,7 +197,7 @@ GIT
 
 GIT
   remote: https://github.com/openpoke/decidim-module-odoo.git
-  revision: f1e608dd4011182126e7296c396a8c01e50ce0d8
+  revision: 9e261e156a99f18884b561bd0c2f0b98460aaa1a
   branch: main
   specs:
     decidim-odoo (0.4.1)
@@ -540,7 +540,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2025.0902)
+    mime-types-data (3.2025.0909)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.5)
@@ -713,7 +713,7 @@ GEM
       ffi (~> 1.0)
     redcarpet (3.6.1)
     redis (4.8.1)
-    redis-client (0.25.2)
+    redis-client (0.25.3)
       connection_pool
     regexp_parser (2.11.2)
     reline (0.6.2)
@@ -723,7 +723,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.4.3)
+    rexml (3.4.4)
     rspec (3.13.1)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
