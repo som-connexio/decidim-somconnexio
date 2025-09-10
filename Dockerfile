@@ -22,8 +22,8 @@ COPY ./Gemfile /app/Gemfile
 COPY ./Gemfile.lock /app/Gemfile.lock
 
 RUN gem install bundler:$(grep -A 1 'BUNDLED WITH' Gemfile.lock | tail -n 1 | xargs) && \
-    bundle config --local without 'development test' && \
-    bundle install --deployment -j4 --retry 3 && \
+    bundle config --deployment --local without 'development test' && \
+    bundle install -j4 --retry 3 && \
     # Remove unneeded gems
     bundle clean --force && \
     # Remove unneeded files from installed gems (cache, *.o, *.c)
