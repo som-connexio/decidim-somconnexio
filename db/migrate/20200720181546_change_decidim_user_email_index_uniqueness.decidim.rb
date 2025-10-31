@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim (originally 20170405091801)
 
+# This migration comes from decidim (originally 20170405091801)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-10-31 09:09:23 UTC
 class ChangeDecidimUserEmailIndexUniqueness < ActiveRecord::Migration[5.0]
   def change
     remove_index :decidim_users, :email
