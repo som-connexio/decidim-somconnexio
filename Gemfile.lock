@@ -194,8 +194,8 @@ GIT
 
 GIT
   remote: https://github.com/openpoke/decidim-module-odoo.git
-  revision: bc730d12c51bc3e3443fb5c951290af04d854ad7
-  branch: upgrade-0.30
+  revision: 6318471a938b9425fa8c06527f235288a40e33c2
+  branch: main
   specs:
     decidim-odoo (0.4.1)
       decidim-core (>= 0.30.0, < 0.31)
@@ -532,7 +532,7 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     invisible_captcha (0.13.0)
       rails (>= 3.2.0)
-    io-console (0.8.0)
+    io-console (0.8.1)
     json (2.15.2)
     json-jwt (1.16.7)
       activesupport (>= 4.2)
@@ -764,7 +764,7 @@ GEM
     redis-client (0.25.0)
       connection_pool
     regexp_parser (2.10.0)
-    reline (0.6.1)
+    reline (0.6.2)
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)
