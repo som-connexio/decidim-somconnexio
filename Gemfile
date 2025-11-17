@@ -5,18 +5,18 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.29-stable" }.freeze
+DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.30-stable" }.freeze
 
 gem "decidim", DECIDIM_VERSION
 
 gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
 gem "decidim-odoo", github: "openpoke/decidim-module-odoo", branch: "main"
-gem "decidim-term_customizer", github: "CodiTramuntana/decidim-module-term_customizer", branch: "upgrade/decidim_0.29"
+gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "release/0.30-stable"
 
-gem "bootsnap", "~> 1.7"
-gem "deface", ">= 1.9"
+gem "bootsnap"
+gem "deface"
 gem "health_check"
-gem "puma", ">= 6.3.1"
+gem "puma"
 gem "rails_semantic_logger"
 gem "sentry-rails"
 gem "sentry-ruby"
