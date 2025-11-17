@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  RUBY_VERSION: 3.2.8
+  RUBY_VERSION: 3.3.9
   NODE_VERSION: 18.17.1
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
       RUBYOPT: '-W:no-deprecated'
     services:
       postgres:
-        image: postgres:14
+        image: postgres:17-alpine
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
@@ -40,7 +40,7 @@ jobs:
           fetch-depth: 1
 
       - name: Install GraphicsMagick
-        run: sudo apt-get update && sudo apt-get install -y wkhtmltopdf imagemagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
 
       - uses: ruby/setup-ruby@v1
         with:
