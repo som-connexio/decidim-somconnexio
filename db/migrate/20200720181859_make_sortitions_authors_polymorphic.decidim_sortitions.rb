@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim_sortitions (originally 20181017110803)
 
+# This migration comes from decidim_sortitions (originally 20181017110803)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-11-17 14:33:17 UTC
 class MakeSortitionsAuthorsPolymorphic < ActiveRecord::Migration[5.2]
   class User < ApplicationRecord
     self.table_name = :decidim_users
