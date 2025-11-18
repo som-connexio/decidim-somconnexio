@@ -9,7 +9,7 @@ checksums = [
   {
     package: "decidim-core",
     files: {
-#      "/app/controllers/decidim/devise/sessions_controller.rb" => "e60834d5892b0539b967328888b25829",
+      "/app/controllers/decidim/devise/sessions_controller.rb" => "7cecc389de97bf63f17da505d6c05774",
       "/app/views/layouts/decidim/_head_extra.html.erb" => "25642b423f3b3a1ac9c69bf558a6b791"
     }
   }
