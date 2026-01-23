@@ -11,7 +11,7 @@ gem "decidim", DECIDIM_VERSION
 
 gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "release/0.31-stable"
 gem "decidim-elections", DECIDIM_VERSION
-# gem "decidim-odoo", github: "openpoke/decidim-module-odoo", branch: "main"
+gem "decidim-odoo", github: "openpoke/decidim-module-odoo", branch: "upgrade-0.31"
 gem "decidim-pokecode", github: "openpoke/decidim-module-pokecode", branch: "main"
 gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "release/0.31-stable"
 
