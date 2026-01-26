@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/decidim-ice/decidim-module-decidim_awesome.git
-  revision: b8bbaef4fb1bae845f8ce4beede7323faed674f8
-  branch: release/0.31-stable
+  revision: 9ce4acae26a1161799cd0fc9ac767dcbaa11eadf
+  branch: main
   specs:
     decidim-decidim_awesome (0.14.0)
       active_hashcash (~> 0.4.0)
@@ -228,7 +228,7 @@ GIT
 GIT
   remote: https://github.com/openpoke/decidim-module-term_customizer.git
   revision: 8cd8bafc273b34ff7dae7c0dcbf231062aa68466
-  branch: release/0.31-stable
+  branch: main
   specs:
     decidim-term_customizer (0.31)
       decidim-admin (~> 0.31.0)
