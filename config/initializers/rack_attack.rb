@@ -16,6 +16,6 @@ if Rails.env.production?
 
   Rack::Attack.safelist("bypass with secret param") do |request|
     # Requests are allowed if the return value is truthy
-    request.params["skip_rack_attack"] == Rails.application.secrets.rack_attack_skip
+    request.params["skip_rack_attack"] == ENV["RACK_ATTACK_SKIP"]
   end
 end
