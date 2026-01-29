@@ -11,9 +11,43 @@ GIT
       sassc (~> 2.3)
 
 GIT
-  remote: https://github.com/decidim/decidim.git
-  revision: bd2ed039fa9cd6879f66db1d2662e85e9e46dab0
-  branch: release/0.31-stable
+  remote: https://github.com/openpoke/decidim-module-odoo.git
+  revision: 75286544d39b1711512b01289d75a22ca580437c
+  branch: main
+  specs:
+    decidim-odoo (0.6)
+      decidim-core (>= 0.31, < 0.32)
+      omniauth-keycloak (~> 1.5)
+
+GIT
+  remote: https://github.com/openpoke/decidim-module-pokecode.git
+  revision: de1b475846314af7116a544f23ce034d0f978190
+  branch: main
+  specs:
+    decidim-pokecode (0.2.0)
+      aws-sdk-s3
+      decidim-core (>= 0.31.0, < 0.32)
+      deface (>= 1.5)
+      health_check
+      rails_semantic_logger
+      sentry-rails
+      sentry-ruby
+      sidekiq
+      sidekiq-cron
+
+GIT
+  remote: https://github.com/openpoke/decidim-module-term_customizer.git
+  revision: 8cd8bafc273b34ff7dae7c0dcbf231062aa68466
+  branch: main
+  specs:
+    decidim-term_customizer (0.31)
+      decidim-admin (~> 0.31.0)
+      decidim-core (~> 0.31.0)
+
+GIT
+  remote: https://github.com/openpoke/decidim.git
+  revision: e75c8169cd555c4af06c675fd14bf01b33f6b87c
+  branch: 0.31-backports
   specs:
     decidim (0.31.0)
       decidim-accountability (= 0.31.0)
@@ -199,40 +233,6 @@ GIT
       devise_invitable (~> 2.0, >= 2.0.9)
     decidim-verifications (0.31.0)
       decidim-core (= 0.31.0)
-
-GIT
-  remote: https://github.com/openpoke/decidim-module-odoo.git
-  revision: e0a35b743606eac2dca24b3fa83704577d0392ff
-  branch: upgrade-0.31
-  specs:
-    decidim-odoo (0.6)
-      decidim-core (>= 0.31, < 0.32)
-      omniauth-keycloak (~> 1.5)
-
-GIT
-  remote: https://github.com/openpoke/decidim-module-pokecode.git
-  revision: de1b475846314af7116a544f23ce034d0f978190
-  branch: main
-  specs:
-    decidim-pokecode (0.2.0)
-      aws-sdk-s3
-      decidim-core (>= 0.31.0, < 0.32)
-      deface (>= 1.5)
-      health_check
-      rails_semantic_logger
-      sentry-rails
-      sentry-ruby
-      sidekiq
-      sidekiq-cron
-
-GIT
-  remote: https://github.com/openpoke/decidim-module-term_customizer.git
-  revision: 8cd8bafc273b34ff7dae7c0dcbf231062aa68466
-  branch: main
-  specs:
-    decidim-term_customizer (0.31)
-      decidim-admin (~> 0.31.0)
-      decidim-core (~> 0.31.0)
 
 GEM
   remote: https://rubygems.org/
@@ -654,7 +654,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2026.0113)
+    mime-types-data (3.2026.0127)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (6.0.1)
@@ -766,7 +766,7 @@ GEM
       net-smtp
       premailer (~> 1.7, >= 1.7.9)
     prettyprint (0.2.0)
-    prism (1.8.0)
+    prism (1.9.0)
     psych (5.3.1)
       date
       stringio
