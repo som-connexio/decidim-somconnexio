@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/openpoke/decidim-module-pokecode.git
-  revision: de1b475846314af7116a544f23ce034d0f978190
+  revision: fc05a75aac1771ac3b5504a3c2d1d3b4851d2b7d
   branch: main
   specs:
     decidim-pokecode (0.2.0)
@@ -323,7 +323,7 @@ GEM
     aes_key_wrap (1.1.0)
     ast (2.4.3)
     aws-eventstream (1.4.0)
-    aws-partitions (1.1208.0)
+    aws-partitions (1.1210.0)
     aws-sdk-core (3.241.4)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.992.0)
@@ -335,7 +335,7 @@ GEM
     aws-sdk-kms (1.121.0)
       aws-sdk-core (~> 3, >= 3.241.4)
       aws-sigv4 (~> 1.5)
-    aws-sdk-s3 (1.212.0)
+    aws-sdk-s3 (1.213.0)
       aws-sdk-core (~> 3, >= 3.241.4)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.5)
@@ -468,7 +468,7 @@ GEM
       temple
     erubi (1.13.1)
     escape_utils (1.3.0)
-    et-orbi (1.2.11)
+    et-orbi (1.4.0)
       tzinfo
     excon (1.3.2)
       logger
@@ -510,8 +510,8 @@ GEM
       fog-core (>= 1.27, < 3.0)
     formatador (1.2.3)
       reline
-    fugit (1.11.1)
-      et-orbi (~> 1, >= 1.2.11)
+    fugit (1.12.1)
+      et-orbi (~> 1.4)
       raabro (~> 1.4)
     gemoji (3.0.1)
     geocoder (1.8.6)
@@ -820,7 +820,7 @@ GEM
     rails-i18n (7.0.10)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
-    rails_semantic_logger (4.17.0)
+    rails_semantic_logger (4.19.0)
       rack
       railties (>= 5.1)
       semantic_logger (~> 4.16)
@@ -849,7 +849,7 @@ GEM
       tsort
     redcarpet (3.6.1)
     redis (4.8.1)
-    redis-client (0.25.0)
+    redis-client (0.26.4)
       connection_pool
     regexp_parser (2.10.0)
     reline (0.6.3)
@@ -975,13 +975,13 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    semantic_logger (4.16.1)
+    semantic_logger (4.17.0)
       concurrent-ruby (~> 1.0)
     semantic_range (3.1.0)
-    sentry-rails (5.25.0)
-      railties (>= 5.0)
-      sentry-ruby (~> 5.25.0)
-    sentry-ruby (5.25.0)
+    sentry-rails (6.3.0)
+      railties (>= 5.2.0)
+      sentry-ruby (~> 6.3.0)
+    sentry-ruby (6.3.0)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
     shakapacker (8.3.0)
@@ -990,13 +990,13 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    sidekiq (7.3.9)
+    sidekiq (7.3.10)
       base64
-      connection_pool (>= 2.3.0)
+      connection_pool (>= 2.3.0, < 3)
       logger
-      rack (>= 2.2.4)
-      redis-client (>= 0.22.2)
-    sidekiq-cron (2.3.0)
+      rack (>= 2.2.4, < 3.3)
+      redis-client (>= 0.23.0, < 1)
+    sidekiq-cron (2.3.1)
       cronex (>= 0.13.0)
       fugit (~> 1.8, >= 1.11.1)
       globalid (>= 1.0.1)
