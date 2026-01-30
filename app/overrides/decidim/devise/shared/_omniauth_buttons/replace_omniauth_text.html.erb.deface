@@ -1,7 +1,5 @@
-<!-- replace "span>erb[loud]:contains('normalize_provider_name(provider).titleize')" -->
+<!-- insert_after "erb[loud]:contains('oauth_icon provider')" -->
 
 <% if provider == :odoo_keycloak %>
   <%= t("devise.login.sign_in_keycloak") %>
-<% else %>
-  <%= normalize_provider_name(provider).titleize %>
 <% end %>
