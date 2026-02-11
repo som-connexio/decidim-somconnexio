@@ -14,6 +14,7 @@ gem "decidim-elections", DECIDIM_VERSION
 gem "decidim-odoo", github: "openpoke/decidim-module-odoo", branch: "main"
 gem "decidim-pokecode", github: "openpoke/decidim-module-pokecode", branch: "main"
 gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "main"
+gem "decidim-action_delegator", github: "openpoke/decidim-module-action_delegator", branch: "main"
 
 gem "bootsnap", "~> 1.7"
 gem "puma", ">= 6.3.1"
