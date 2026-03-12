@@ -4,3 +4,4 @@ en:
     login:
       admin_login: Acess as an administrator
       sign_in_keycloak: Access to the participatory platform
+      sign_in_worker_keycloak: Access as worker
