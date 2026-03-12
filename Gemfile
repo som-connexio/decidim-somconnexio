@@ -17,6 +17,7 @@ gem "decidim-pokecode", github: "openpoke/decidim-module-pokecode", branch: "mai
 gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "main"
 
 gem "bootsnap", "~> 1.7"
+gem "omniauth-keycloak", "~> 1.5"
 gem "puma", ">= 6.3.1"
 
 group :development, :test do

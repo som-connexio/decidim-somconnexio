@@ -1148,6 +1148,7 @@ DEPENDENCIES
   decidim-pokecode!
   decidim-term_customizer!
   letter_opener_web
+  omniauth-keycloak (~> 1.5)
   puma (>= 6.3.1)
   web-console
 
