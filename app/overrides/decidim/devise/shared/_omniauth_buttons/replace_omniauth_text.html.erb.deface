@@ -3,3 +3,7 @@
 <% if provider == :odoo_keycloak %>
   <%= t("devise.login.sign_in_keycloak") %>
 <% end %>
+
+<% if provider == :worker_keycloak %>
+  <%= t("devise.login.sign_in_worker_keycloak") %>
+<% end %>
