@@ -24,7 +24,5 @@ module DecidimSomconnexio
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     #
-    config.autoload_paths << Rails.root.join("lib")
-    config.eager_load_paths << Rails.root.join("lib")
   end
 end
