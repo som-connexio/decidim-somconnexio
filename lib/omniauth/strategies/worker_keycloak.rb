@@ -7,7 +7,7 @@ module OmniAuth
     class WorkerKeycloak < OmniAuth::Strategies::KeycloakOpenId
       option :name, "worker_keycloak"
 
-      uid { raw_info[:ref] }
+      uid { raw_info["preferred_username"] }
 
       info do
         {
