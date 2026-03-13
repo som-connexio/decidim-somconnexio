@@ -4,3 +4,4 @@ ca:
     login:
       admin_login: Accedeix com a administrador
       sign_in_keycloak: Accedeix a la plataforma de participació
+      sign_in_worker_keycloak: Accedeix com a treballador

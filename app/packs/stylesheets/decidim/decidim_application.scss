@@ -6,11 +6,16 @@
 //
 // By default this is empty.
 
-.login__omniauth-button.login__omniauth-button--odoo {
+.login__omniauth-button.login__omniauth-button--odoo,
+.login__omniauth-button.login__omniauth-button--worker {
   @apply flex items-center;
 
   .external-icon {
     @apply rounded-full w-10 h-10 bg-primary;
     display: block !important;
   }
+}
+
+.login__omniauth-button.login__omniauth-button--worker .external-icon {
+  @apply bg-tertiary;
 }

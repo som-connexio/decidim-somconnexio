@@ -4,3 +4,4 @@ es:
     login:
       admin_login: Accede como administrador
       sign_in_keycloak: Accede a la plataforma de participación
+      sign_in_worker_keycloak: Accede como trabajador
