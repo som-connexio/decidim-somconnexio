@@ -2,6 +2,6 @@
 en:
   devise:
     login:
-      admin_login: Acess as an administrator
-      sign_in_keycloak: Access to the participatory platform
+      admin_login: Access as an administrator
+      sign_in_keycloak: Access as a SomConnexió member
       sign_in_worker_keycloak: Access as a worker
