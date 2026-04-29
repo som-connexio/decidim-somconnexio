@@ -372,7 +372,7 @@ GEM
     bigdecimal (4.0.1)
     bindata (2.5.1)
     bindex (0.8.1)
-    bootsnap (1.23.0)
+    bootsnap (1.24.1)
       msgpack (~> 1.2)
     brakeman (8.0.4)
       racc
@@ -1143,7 +1143,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  bootsnap (~> 1.7)
+  bootsnap (~> 1.24)
   brakeman
   byebug (~> 11.0)
   decidim!
