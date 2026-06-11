@@ -61,7 +61,7 @@ GIT
 
 GIT
   remote: https://github.com/openpoke/decidim.git
-  revision: bf75dd39e49995cb8b0e1924ae7856920292621c
+  revision: f935845205193149a588c63f6c6c20bed06f9d35
   branch: 0.31-backports
   specs:
     decidim (0.31.5)
@@ -1067,7 +1067,7 @@ GEM
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
     smart_properties (1.17.0)
-    snaky_hash (2.0.5)
+    snaky_hash (2.0.6)
       hashie (>= 0.1.0, < 6)
       version_gem (>= 1.1.8, < 3)
     spring (4.6.0)

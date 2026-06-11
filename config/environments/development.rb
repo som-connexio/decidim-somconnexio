@@ -84,4 +84,5 @@ Rails.application.configure do
   end
 
   config.hosts << "lvh.me"
+  config.hosts << "participa.somconnexio.coop"
 end
