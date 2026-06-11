@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/openpoke/decidim-module-odoo.git
-  revision: 75286544d39b1711512b01289d75a22ca580437c
+  revision: 11efbb3aacab33ede383db68978b5e63cf2a668e
   branch: main
   specs:
     decidim-odoo (0.6)
