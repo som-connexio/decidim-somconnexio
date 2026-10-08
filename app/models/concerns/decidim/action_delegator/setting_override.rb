@@ -4,6 +4,7 @@ module Decidim
   module ActionDelegator
     module SettingOverride
       extend ActiveSupport::Concern
+
       included do
         enum :authorization_method, { phone: 0, email: 1, both: 2, odoo: 3 }
 
