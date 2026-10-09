@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { github: "openpoke/decidim", branch: "0.31-backports" }.freeze
+DECIDIM_VERSION = { github: "openpoke/decidim", branch: "0.32-backports" }.freeze
 
 gem "decidim", DECIDIM_VERSION
 

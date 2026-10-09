@@ -9,7 +9,7 @@ checksums = [
   {
     package: "decidim-core",
     files: {
-      "/app/controllers/decidim/devise/sessions_controller.rb" => "dc8d653386d0235b61e232d4ecbf4f6f",
+      "/app/controllers/decidim/devise/sessions_controller.rb" => "f14a097479319729b5a80eb8ea4664bb",
       "/app/views/layouts/decidim/_head_extra.html.erb" => "25642b423f3b3a1ac9c69bf558a6b791"
     }
   }
@@ -23,7 +23,7 @@ checksums = [
 
 describe "Overriden files", type: :view do
   checksums.each do |item|
-    spec = Gem::Specification.find_by_name(item[:package])
+    spec = Gem::Specification.find_by_name(item[:package]) # rubocop:disable RSpec/LeakyLocalVariable
 
     item[:files].each do |file, signature|
       it "#{spec.gem_dir}#{file} matches checksum" do
