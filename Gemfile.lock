@@ -12,8 +12,8 @@ GIT
 
 GIT
   remote: https://github.com/openpoke/decidim-module-action_delegator.git
-  revision: f4b870b92ca0119bf15df4fde547d889b63fde55
-  branch: upgrade-0.32
+  revision: ecb265da62a8afe6e2d644877126adcce05ecd8c
+  branch: main
   specs:
     decidim-action_delegator (0.10.0)
       decidim-admin (>= 0.32, < 0.33)
