@@ -25,7 +25,6 @@ group :development, :test do
 
   gem "brakeman"
   gem "decidim-dev", DECIDIM_VERSION
-  gem "selma", "0.5.2"
 end
 
 group :development do

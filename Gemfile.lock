@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/openpoke/decidim-module-action_delegator.git
-  revision: 81a54c4a05e2a5d42594710817df19539bbd5dbc
+  revision: f4b870b92ca0119bf15df4fde547d889b63fde55
   branch: upgrade-0.32
   specs:
     decidim-action_delegator (0.10.0)
@@ -1195,7 +1195,6 @@ DEPENDENCIES
   letter_opener_web
   omniauth-keycloak (~> 1.5)
   puma (>= 6.3.1)
-  selma (= 0.5.2)
   web-console
 
 CHECKSUMS
