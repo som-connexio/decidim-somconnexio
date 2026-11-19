@@ -9,12 +9,12 @@ DECIDIM_VERSION = { github: "openpoke/decidim", branch: "0.31-backports" }.freez
 
 gem "decidim", DECIDIM_VERSION
 
-gem "decidim-action_delegator", github: "openpoke/decidim-module-action_delegator", branch: "main"
-gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
+gem "decidim-action_delegator", github: "openpoke/decidim-module-action_delegator", branch: "release/0.31-stable"
+gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "release/0.31-stable"
 gem "decidim-elections", DECIDIM_VERSION
-gem "decidim-odoo", github: "openpoke/decidim-module-odoo", branch: "main"
-gem "decidim-pokecode", github: "openpoke/decidim-module-pokecode", branch: "main"
-gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "main"
+gem "decidim-odoo", github: "openpoke/decidim-module-odoo", branch: "release/0.31-stable"
+gem "decidim-pokecode", github: "openpoke/decidim-module-pokecode", branch: "release/0.31-stable"
+gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "release/0.31-stable"
 
 gem "bootsnap", "~> 1.7"
 gem "omniauth-keycloak", "~> 1.5"
